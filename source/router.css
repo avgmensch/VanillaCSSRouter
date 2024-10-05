@@ -1,0 +1,14 @@
+/* https://leanrada.com/notes/pure-css-spa-router/ */
+
+/**
+ * Any section that is not the target and is not #home will be hidden.
+ * The #home section will always be visible unless another rule overrides it.
+ */
+section:not(:target, #home),
+/**
+ * If :root (html) has a target (i.e., a section is targeted), section#home will be hidden.
+ * This overrides the previous rule: if a target is present, #home will be hidden.
+ */
+:root:has(:target) section#home {
+  display: none;
+}
